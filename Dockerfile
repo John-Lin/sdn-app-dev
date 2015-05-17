@@ -19,10 +19,11 @@ RUN apt-get update && \
     mv /opt/ryu-master /opt/ryu && \
     rm /opt/ryu.zip && \
     cd /opt/ryu && \
+    mkdir /opt/ryu/myapp
     python ./setup.py install
 
 # Add the SDN Applications
-ADD myapp /opt
+ADD myapp /opt/ryu/myapp
 
 # 6633 - OpenFlow
 EXPOSE 6633
