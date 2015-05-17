@@ -29,7 +29,7 @@ EXPOSE 6633
 WORKDIR /opt/ryu
 
 # Add the SDN Applications
-ADD ./myapp /myapp
+COPY ./myapp myapp/
 
 
 # Execute simple_siwtch_13.py
