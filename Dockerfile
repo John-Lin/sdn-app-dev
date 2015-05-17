@@ -21,15 +21,14 @@ RUN apt-get update && \
     cd /opt/ryu && \
     python ./setup.py install
 
+# Add the SDN Applications
+ADD myapp /opt
 
 # 6633 - OpenFlow
 EXPOSE 6633
 
 # Define working directory.
 WORKDIR /opt/ryu
-
-# Add the SDN Applications
-ADD ./myapp/*.py /myapp/
 
 
 # Execute simple_siwtch_13.py
